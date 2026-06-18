@@ -1,0 +1,62 @@
+name: CI/CD
+
+# Pipeline: corre os testes em cada push/PR (CI) e,
+# quando há push para main e os testes passam, faz deploy automático (CD) para o GitHub Pages.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Garante um único deploy de cada vez.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # ---------- Integração Contínua ----------
+  test:
+    name: Testes (CI)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Correr testes unitários
+        run: npm test
+
+  # ---------- Entrega/Deploy Contínuo ----------
+  deploy:
+    name: Deploy (CD)
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empacotar o site (ficheiros estáticos)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

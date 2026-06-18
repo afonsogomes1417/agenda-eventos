@@ -1,0 +1,13 @@
+{
+  "name": "agenda-eventos",
+  "version": "1.0.0",
+  "description": "Agenda de Eventos — aplicação de calendário em HTML/CSS/JS puro, com testes unitários e pipeline CI/CD.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "start": "node scripts/serve.mjs"
+  },
+  "keywords": ["agenda", "eventos", "calendario", "vanilla-js", "ci-cd"],
+  "author": "Pedro Araújo",
+  "license": "MIT"
+}

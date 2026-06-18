@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda de Eventos</title>
+  <meta name="description" content="Agenda de Eventos — calendário simples em HTML/CSS/JS com CI/CD." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-icon">📅</span>
+      <div>
+        <h1>Agenda de Eventos</h1>
+        <p class="subtitle">Organiza os teus eventos num calendário simples</p>
+      </div>
+    </div>
+    <button id="btn-new" class="btn btn-primary">+ Novo evento</button>
+  </header>
+
+  <main class="layout">
+    <section class="calendar-panel">
+      <div class="toolbar">
+        <div class="nav">
+          <button id="btn-prev" class="btn btn-ghost" aria-label="Mês anterior">‹</button>
+          <h2 id="month-label" class="month-label"></h2>
+          <button id="btn-next" class="btn btn-ghost" aria-label="Mês seguinte">›</button>
+          <button id="btn-today" class="btn btn-ghost">Hoje</button>
+        </div>
+        <div class="filters">
+          <input id="search" type="search" class="input" placeholder="🔍 Pesquisar…" />
+          <select id="filter-category" class="input">
+            <option value="todas">Todas as categorias</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="weekdays" id="weekdays"></div>
+      <div class="grid" id="calendar-grid"></div>
+    </section>
+
+    <aside class="sidebar">
+      <h3 id="selected-day-label">Eventos do dia</h3>
+      <ul id="day-events" class="event-list"></ul>
+
+      <h3>Próximos eventos</h3>
+      <ul id="upcoming-events" class="event-list"></ul>
+    </aside>
+  </main>
+
+  <!-- Modal de criar/editar evento -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h3 id="modal-title">Novo evento</h3>
+      <form id="event-form" novalidate>
+        <label>Título
+          <input id="f-title" name="title" type="text" class="input" required />
+          <span class="error" id="err-title"></span>
+        </label>
+        <div class="row">
+          <label>Data
+            <input id="f-date" name="date" type="date" class="input" required />
+            <span class="error" id="err-date"></span>
+          </label>
+          <label>Hora
+            <input id="f-time" name="time" type="time" class="input" />
+          </label>
+        </div>
+        <label>Categoria
+          <select id="f-category" name="category" class="input"></select>
+        </label>
+        <label>Descrição
+          <textarea id="f-description" name="description" class="input" rows="3"></textarea>
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="btn-delete" class="btn btn-danger hidden">Apagar</button>
+          <span class="spacer"></span>
+          <button type="button" id="btn-cancel" class="btn btn-ghost">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <span>Feito com HTML/CSS/JS · Engenharia de Software · IPVC ESTG</span>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
