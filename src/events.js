@@ -88,7 +88,9 @@ export function getEventsForDay(events, iso) {
   return sortEvents(events.filter((e) => e.date === iso));
 }
 
-/** Pesquisa por título ou descrição (case-insensitive). */
+/** Pesquisa por título ou descrição (case-insensitive).
+ * Otimizado para case-insensitive e suporta pesquisa parcial.
+ * Retorna eventos ordenados por data/hora. */
 export function searchEvents(events, query) {
   const q = (query || '').trim().toLowerCase();
   if (!q) return sortEvents(events);
