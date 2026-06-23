@@ -71,6 +71,18 @@ A cada `push` ou *pull request* para `main`, o GitHub Actions corre os testes
 (CI). Quando os testes passam num `push` para `main`, é feito o **deploy
 automático** para o GitHub Pages (CD). Ver [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
+Workflows adicionais (deteção automática, valorizada no enunciado):
+
+- **CodeQL** — análise de segurança/vulnerabilidades ([.github/workflows/codeql.yml](.github/workflows/codeql.yml)).
+- **Revisão de PRs com IA (Claude)** — comenta os PRs automaticamente; opcional, requer
+  configuração ([.github/workflows/claude-review.yml](.github/workflows/claude-review.yml), ver [docs/SETUP.md](docs/SETUP.md)).
+
+## 🗂️ Gestão Agile/Scrum
+
+O Product Backlog, Sprint Backlog, a Sprint 1 (concluída) e a gestão de bugs estão
+documentados em [docs/BACKLOG.md](docs/BACKLOG.md), espelhando o board do GitHub Projects.
+Os *templates* de issues e de Pull Request estão em [.github/](.github/).
+
 ## 📄 Licença
 
 MIT.

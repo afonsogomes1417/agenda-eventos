@@ -1,0 +1,44 @@
+name: Revisão de PR com IA (Claude)
+
+# Revisão automática de Pull Requests com IA (valorizado no enunciado).
+#
+# Está DESATIVADO por defeito para não falhar o pipeline sem configuração.
+# Para ativar:
+#   1. Settings → Secrets and variables → Actions → New repository secret:
+#        ANTHROPIC_API_KEY = <a tua chave da API Anthropic>
+#   2. No separador "Variables", cria a variável:
+#        ENABLE_CLAUDE_REVIEW = true
+# A partir daí, cada PR para main recebe uma revisão automática da IA.
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  review:
+    name: Claude Code Review
+    # Só corre quando explicitamente ativado (evita falhar sem a chave configurada).
+    if: ${{ vars.ENABLE_CLAUDE_REVIEW == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Revisão automática com Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Revê este Pull Request em português. Foca-te em:
+            - bugs e erros de lógica;
+            - vulnerabilidades de segurança;
+            - problemas de performance;
+            - qualidade/arquitetura e code smells.
+            Deixa comentários objetivos e construtivos no PR. Sê conciso.

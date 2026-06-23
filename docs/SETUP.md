@@ -87,13 +87,27 @@ git pull
 
 ---
 
-## 5. (Bónus valorizado) Revisão automática de PRs com IA
+## 5. (Bónus valorizado) Deteção de vulnerabilidades e revisão de PRs com IA
 
-O enunciado valoriza a revisão automática de Pull Requests com IA. Duas opções simples:
+O enunciado valoriza a deteção automática de bugs/vulnerabilidades e a revisão de PRs com IA.
+O projeto já inclui dois workflows para isso:
 
-- **GitHub Copilot code review** (se tiveres acesso): pede revisão no PR.
-- **Claude Code GitHub Action:** adiciona um workflow que comenta os PRs. Requer uma
-  `ANTHROPIC_API_KEY` nos *Secrets* do repositório. (Opcional — pergunta-me e configuro.)
+### a) CodeQL — análise de segurança (ativo, sem configuração)
+`.github/workflows/codeql.yml` corre automaticamente em cada push/PR para `main` e faz
+análise estática de vulnerabilidades. Os resultados aparecem em **Security → Code scanning**.
+Não precisa de chaves — basta o repositório ser público.
+
+### b) Revisão automática de PRs com Claude (opcional — precisa de chave)
+`.github/workflows/claude-review.yml` comenta automaticamente os PRs. Está **desativado por
+defeito** (para não falhar o pipeline sem configuração). Para ativar:
+
+1. **Settings → Secrets and variables → Actions → Secrets → New repository secret:**
+   `ANTHROPIC_API_KEY` = a tua chave da API Anthropic.
+2. No separador **Variables**, cria: `ENABLE_CLAUDE_REVIEW` = `true`.
+
+A partir daí, cada PR para `main` recebe uma revisão automática da IA.
+
+> Alternativa sem chave: **GitHub Copilot code review** (se tiveres acesso) — pede revisão no PR.
 
 ---
 

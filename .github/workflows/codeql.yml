@@ -1,0 +1,32 @@
+name: CodeQL (Segurança)
+
+# Análise estática de segurança/vulnerabilidades com CodeQL.
+# Gratuito em repositórios públicos. Resultados em: Security → Code scanning.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 6 * * 1'  # todas as segundas às 06:00 UTC
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    name: Analisar JavaScript
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Inicializar CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+
+      - name: Executar análise CodeQL
+        uses: github/codeql-action/analyze@v3
