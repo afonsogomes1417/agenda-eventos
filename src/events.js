@@ -103,9 +103,16 @@ export function searchEvents(events, query) {
   );
 }
 
-/** Filtra por categoria. "todas" (ou vazio) devolve tudo. */
+/** Filtra por categoria. "todas" (ou vazio) devolve tudo.
+ * Suporta múltiplas categorias se passadas como array. */
 export function filterByCategory(events, categoryId) {
   if (!categoryId || categoryId === 'todas') return events;
+  
+  // Suporte para array de categorias (múltiplos filtros)
+  if (Array.isArray(categoryId)) {
+    return events.filter((e) => categoryId.includes(e.category));
+  }
+  
   return events.filter((e) => e.category === categoryId);
 }
 
