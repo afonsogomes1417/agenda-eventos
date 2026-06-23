@@ -4,7 +4,7 @@ import {
   getMonthMatrix, getEventsForDay, createEvent, validateEvent,
   searchEvents, filterByCategory, upcomingEvents, toISODate,
 } from './events.js';
-import { loadEvents, saveEvents } from './storage.js';
+import { loadEvents, saveEvents, isStorageAvailable } from './storage.js';
 
 const today = new Date();
 
@@ -148,7 +148,9 @@ function openModal(ev = null) {
   els.fTitle.value = ev ? ev.title : '';
   els.fDate.value = ev ? ev.date : state.selectedISO;
   els.fTime.value = ev ? ev.time : '';
-  els.fCategory.value = ev ? ev.category : CATEGORIES[0].id;
+  els.fCategory.value = ev
+    ? ev.category
+    : (state.category !== 'todas' ? state.category : CATEGORIES[0].id);
   els.fDescription.value = ev ? ev.description : '';
   els.errTitle.textContent = '';
   els.errDate.textContent = '';
@@ -252,6 +254,9 @@ function bindEvents() {
 }
 
 function init() {
+  if (!isStorageAvailable()) {
+    $('storage-warning').classList.remove('hidden');
+  }
   fillCategorySelectors();
   renderWeekdays();
   bindEvents();

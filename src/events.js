@@ -4,6 +4,7 @@
 export const CATEGORIES = [
   { id: 'trabalho', label: 'Trabalho', color: '#2563eb' },
   { id: 'pessoal', label: 'Pessoal', color: '#16a34a' },
+  { id: 'saude', label: 'Saúde', color: '#dc2626' },
   { id: 'estudo', label: 'Estudo', color: '#9333ea' },
   { id: 'outro', label: 'Outro', color: '#ea580c' },
 ];

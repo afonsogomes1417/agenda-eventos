@@ -3,6 +3,23 @@ import { createEvent } from './events.js';
 
 const STORAGE_KEY = 'agenda-eventos:v1';
 
+/**
+ * Verifica se o localStorage está disponível e funcional.
+ * Em modo privado/incógnito alguns browsers permitem aceder ao objeto
+ * mas lançam SecurityError ao chamar setItem.
+ */
+export function isStorageAvailable(storage = globalThis.localStorage) {
+  try {
+    if (!storage) return false;
+    const probe = '__storage_probe__';
+    storage.setItem(probe, '1');
+    storage.removeItem(probe);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /** Lê os eventos guardados. Devolve [] se não houver dados ou se estiverem corrompidos. */
 export function loadEvents(storage = globalThis.localStorage) {
   try {
