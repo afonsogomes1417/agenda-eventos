@@ -13,14 +13,14 @@ Este documento consolida as evidências de colaboração, versionamento Git, e g
 - **Tipo**: Público
 - **Licença**: MIT
 
-### Branches Criadas (por Membro do Grupo)
+### Branches Criadas
 
 | Branch | Criador | Status | Commits |
 |--------|---------|--------|---------|
 | `main` | Afonso Gomes | ✅ Ativa | 13 commits |
-| `feature/search-implementation` | Maria Silva | ✅ Merged | 1 commit |
-| `feature/category-filters` | João Santos | ✅ Merged | 1 commit |
-| `feature/ui-improvements` | Carlos Oliveira | 🔄 Open | 1 commit |
+| `feature/search-implementation` | Afonso Gomes | ✅ Merged | 1 commit |
+| `feature/category-filters` | Afonso Gomes | ✅ Merged | 1 commit |
+| `feature/ui-improvements` | Afonso Gomes | 🔄 Open | 1 commit |
 
 ### Commits por Membro
 
@@ -35,28 +35,7 @@ c45e2cb - Merge pull request #2: Add multi-category filter support
 77ef41a - Add project files and documentation
 151df69 - docs: adicionar guia de configuração de GitHub, deploy e Scrum
 ```
-**Total**: 8 commits | **Rol**: Scrum Master / DevOps
-
-#### Maria Silva
-```
-6221c0b - feat: Improve search implementation with better documentation
-```
-**Branch**: feature/search-implementation  
-**Total**: 1 commit | **Rol**: Developer / Feature Lead - Search
-
-#### João Santos
-```
-bed205d - feat: Add multi-category filter support
-```
-**Branch**: feature/category-filters  
-**Total**: 1 commit | **Rol**: Developer / Feature Lead - Filters
-
-#### Carlos Oliveira
-```
-66af79c - style: Enhance CSS with accessibility improvements
-```
-**Branch**: feature/ui-improvements  
-**Total**: 1 commit | **Rol**: Developer / UI/UX Lead
+**Total**: 11 commits | **Rol**: Developer / Scrum Master / DevOps
 
 ---
 
@@ -65,9 +44,8 @@ bed205d - feat: Add multi-category filter support
 ### Merged Pull Requests
 
 #### PR #1: Improve search implementation
-- **Autor**: Maria Silva
+- **Autor**: Afonso Gomes
 - **Branch**: `feature/search-implementation`
-- **Reviewer**: Carlos Oliveira
 - **Status**: ✅ Merged
 - **Commits**: 1
 - **Alterações**: 3 insertions, 1 deletion em `src/events.js`
@@ -77,9 +55,8 @@ bed205d - feat: Add multi-category filter support
   - Retorna resultados ordenados
 
 #### PR #2: Add multi-category filter support
-- **Autor**: João Santos
+- **Autor**: Afonso Gomes
 - **Branch**: `feature/category-filters`
-- **Reviewer**: Maria Silva
 - **Status**: ✅ Merged
 - **Commits**: 1
 - **Alterações**: 8 insertions, 1 deletion em `src/events.js`
@@ -91,7 +68,7 @@ bed205d - feat: Add multi-category filter support
 ### Open Pull Requests
 
 #### PR #3: Enhance CSS with accessibility improvements
-- **Autor**: Carlos Oliveira
+- **Autor**: Afonso Gomes
 - **Branch**: `feature/ui-improvements`
 - **Status**: 🔄 Pending Review
 - **Commits**: 1
@@ -133,13 +110,13 @@ bed205d - feat: Add multi-category filter support
 - **Status**: Sem atrasos
 
 **User Stories Completadas**:
-- US001: Criar novo evento (8 pts) - Maria Silva ✅
-- US002: Editar evento existente (5 pts) - João Santos ✅
-- US003: Eliminar evento (3 pts) - Maria Silva ✅
-- US004: Calendário mensal interativo (13 pts) - Carlos Oliveira ✅
-- US005: Ver eventos por dia (5 pts) - João Santos ✅
-- US006: Próximos eventos (5 pts) - Carlos Oliveira ✅
-- BUG001: Validação de horas (3 pts) - Maria Silva ✅
+- US001: Criar novo evento (8 pts) - Afonso Gomes ✅
+- US002: Editar evento existente (5 pts) - Afonso Gomes ✅
+- US003: Eliminar evento (3 pts) - Afonso Gomes ✅
+- US004: Calendário mensal interativo (13 pts) - Afonso Gomes ✅
+- US005: Ver eventos por dia (5 pts) - Afonso Gomes ✅
+- US006: Próximos eventos (5 pts) - Afonso Gomes ✅
+- BUG001: Validação de horas (3 pts) - Afonso Gomes ✅
 
 ### Gestão de Issues
 **Status**: ✅ Documentado  
@@ -166,10 +143,7 @@ bed205d - feat: Add multi-category filter support
 
 | Membro | Rol | Tarefas | Story Points |
 |--------|-----|---------|---|
-| Maria Silva | Developer/Features | US001, US003, BUG001, Revisão PR#2 | 14 |
-| João Santos | Developer/Backend | US002, US005, BUG002, Revisão PR#1 | 10 |
-| Carlos Oliveira | Developer/UI | US004, US006, PR#3, UI/Acessibilidade | 19 |
-| Afonso Gomes | Scrum Master/DevOps | Deploy, CI/CD, Git Management | - |
+| Afonso Gomes | Developer / Scrum Master / DevOps | US001-US006, BUG001, Deploy, CI/CD, Git Management | 42 |
 
 ---
 
@@ -256,7 +230,7 @@ bed205d - feat: Add multi-category filter support
 - [ ] Performance optimization
 
 ### Post-Sprint 1 To-Do
-- [ ] Aprovar PR#3 de Carlos Oliveira
+- [ ] Aprovar PR#3 (feature/ui-improvements)
 - [ ] Atualizar GitHub Projects com Sprint 2
 - [ ] Configurar Anthropic API para code review com IA
 - [ ] Realizar retrospectiva formal
@@ -268,7 +242,7 @@ bed205d - feat: Add multi-category filter support
 
 O projeto **Agenda de Eventos** demonstra uma **estrutura profissional de colaboração** com:
 
-✅ **Versionamento Git**: 3 membros com branches e PRs estruturadas  
+✅ **Versionamento Git**: branches e PRs estruturadas  
 ✅ **Gestão Agile/Scrum**: Product Backlog, Sprint completo, retrospectiva  
 ✅ **DevOps/CI-CD**: GitHub Actions, Deploy automático, Análise de segurança  
 ✅ **Documentação**: Completa e organizada  

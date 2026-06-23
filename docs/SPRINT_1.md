@@ -10,13 +10,13 @@
 
 | ID | User Story | Assignee | Status | Story Points |
 |---|---|---|---|---|
-| US001 | Criar novo evento com título, data, hora, descrição | Maria Silva | ✅ Concluído | 8 |
-| US002 | Editar evento existente | João Santos | ✅ Concluído | 5 |
-| US003 | Eliminar evento | Maria Silva | ✅ Concluído | 3 |
-| US004 | Visualizar calendário mensal interativo | Carlos Oliveira | ✅ Concluído | 13 |
-| US005 | Ver lista de eventos por dia | João Santos | ✅ Concluído | 5 |
-| US006 | Visualizar próximos eventos | Carlos Oliveira | ✅ Concluído | 5 |
-| BUG001 | Corrigir validação de horas inválidas | Maria Silva | ✅ Concluído | 3 |
+| US001 | Criar novo evento com título, data, hora, descrição | Afonso Gomes | ✅ Concluído | 8 |
+| US002 | Editar evento existente | Afonso Gomes | ✅ Concluído | 5 |
+| US003 | Eliminar evento | Afonso Gomes | ✅ Concluído | 3 |
+| US004 | Visualizar calendário mensal interativo | Afonso Gomes | ✅ Concluído | 13 |
+| US005 | Ver lista de eventos por dia | Afonso Gomes | ✅ Concluído | 5 |
+| US006 | Visualizar próximos eventos | Afonso Gomes | ✅ Concluído | 5 |
+| BUG001 | Corrigir validação de horas inválidas | Afonso Gomes | ✅ Concluído | 3 |
 
 ## Sprint Velocity
 - **Story Points Planeados**: 45

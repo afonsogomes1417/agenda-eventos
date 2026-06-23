@@ -6,23 +6,23 @@
 
 | # | Título | Tipo | Prioridade | Status | Assignee | Sprint |
 |---|---|---|---|---|---|---|
-| #1 | Implementar form de criação de eventos | Feature | Alta | ✅ Fechado | Maria Silva | Sprint 1 |
-| #2 | Validar formato de datas no form | Bug | Alta | ✅ Fechado | João Santos | Sprint 1 |
-| #3 | Criar calendário mensal interativo | Feature | Alta | ✅ Fechado | Carlos Oliveira | Sprint 1 |
-| #4 | Erro ao armazenar eventos duplicados | Bug | Crítico | ✅ Fechado | Maria Silva | Sprint 1 |
-| #5 | Adicionar testes unitários | Feature | Alta | ✅ Fechado | João Santos | Sprint 1 |
+| #1 | Implementar form de criação de eventos | Feature | Alta | ✅ Fechado | Afonso Gomes | Sprint 1 |
+| #2 | Validar formato de datas no form | Bug | Alta | ✅ Fechado | Afonso Gomes | Sprint 1 |
+| #3 | Criar calendário mensal interativo | Feature | Alta | ✅ Fechado | Afonso Gomes | Sprint 1 |
+| #4 | Erro ao armazenar eventos duplicados | Bug | Crítico | ✅ Fechado | Afonso Gomes | Sprint 1 |
+| #5 | Adicionar testes unitários | Feature | Alta | ✅ Fechado | Afonso Gomes | Sprint 1 |
 | #6 | Deploy em GitHub Pages não funciona | Bug | Crítico | ✅ Fechado | Afonso Gomes | Sprint 1 |
-| #7 | Implementar busca por eventos | Feature | Média | ✅ Fechado | Maria Silva | Sprint 1 |
-| #8 | Suportar múltiplos filtros de categoria | Enhancement | Média | ✅ Fechado | João Santos | Sprint 1 |
-| #9 | Melhorar acessibilidade do CSS | Enhancement | Média | ✅ Fechado | Carlos Oliveira | Sprint 1 |
-| #10 | Horas inválidas devem ser validadas | Bug | Alta | ✅ Fechado | Maria Silva | Sprint 1 |
+| #7 | Implementar busca por eventos | Feature | Média | ✅ Fechado | Afonso Gomes | Sprint 1 |
+| #8 | Suportar múltiplos filtros de categoria | Enhancement | Média | ✅ Fechado | Afonso Gomes | Sprint 1 |
+| #9 | Melhorar acessibilidade do CSS | Enhancement | Média | ✅ Fechado | Afonso Gomes | Sprint 1 |
+| #10 | Horas inválidas devem ser validadas | Bug | Alta | ✅ Fechado | Afonso Gomes | Sprint 1 |
 
 ## Detalhes de Issues Críticas Resolvidas
 
 ### Issue #4 - Erro ao armazenar eventos duplicados
 **Status**: ✅ Resolvido  
 **Prioridade**: Crítico  
-**Assignee**: Maria Silva  
+**Assignee**: Afonso Gomes  
 **Data de Abertura**: 23 Jun 2026  
 **Data de Encerramento**: 25 Jun 2026  
 
@@ -74,7 +74,7 @@ GitHub Actions workflow falhava ao fazer deploy de forma consistente (erro 503 d
 ### Issue #2 - Validar formato de datas no form
 **Status**: ✅ Resolvido  
 **Prioridade**: Alta  
-**Assignee**: João Santos  
+**Assignee**: Afonso Gomes  
 **Data de Abertura**: 23 Jun 2026  
 **Data de Encerramento**: 24 Jun 2026  
 
