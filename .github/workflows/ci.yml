@@ -55,14 +55,15 @@ jobs:
       - name: Criar diretório de deploy
         run: |
           mkdir -p build
-          cp index.html build/
-          cp -r css build/
-          cp -r src build/
+          cp index.html build/ || exit 1
+          cp -r css build/ || exit 1
+          cp -r src build/ || exit 1
+          ls -la build/
 
       - name: Empacotar o site (ficheiros estáticos)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'
+          path: 'build'
 
       - name: Publicar no GitHub Pages
         id: deployment
