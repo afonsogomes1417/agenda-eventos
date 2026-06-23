@@ -50,20 +50,21 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v4
 
-      - name: Criar diretório de deploy
+      - name: Build site estático
         run: |
-          mkdir -p build
-          cp index.html build/ || exit 1
-          cp -r css build/ || exit 1
-          cp -r src build/ || exit 1
-          ls -la build/
+          mkdir -p _site
+          cp index.html _site/
+          cp -r css _site/
+          cp -r src _site/
+          echo "✓ Build completo:"
+          ls -R _site/
 
-      - name: Empacotar o site (ficheiros estáticos)
+      - name: Upload para GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build'
+          path: '_site'
 
       - name: Publicar no GitHub Pages
         id: deployment
